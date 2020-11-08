@@ -37,12 +37,12 @@
     </nav>
     <!-- Home -->
     <section id="home">
-      <div class="home__container">
-        <img src="imgs/profile.jpg" alt="Catty's profile photo" class="home__avatar">
-        <h1 class="home__title">Hello, I'm Catty</h1>
-        <h2 class="home__description">프론트엔드 지망생</h2>
-        <button class="home__contact">Contact Me</button>
-      </div>
+        <div class="home__container">
+            <img src="imgs/profile.jpg" alt="Catty's profile photo" class="home__avatar">
+            <h1 class="home__title">Hello, I'm Catty</h1>
+            <h2 class="home__description">프론트엔드 지망생</h2>
+            <button class="home__contact">Contact Me</button>
+        </div>
     </section>
     <!-- About -->
     <section id="about" class="section section__container">
@@ -96,7 +96,8 @@
             <h1>Skills</h1>
             <h2>Skills &amp; Attributes </h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, neque officia aut omnis sunt tempore.
-                Natus inventore nemo reprehenderit voluptatem ad facere veniam necessitatibus sapiente fuga nesciunt dolore,
+                Natus inventore nemo reprehenderit voluptatem ad facere veniam necessitatibus sapiente fuga nesciunt
+                dolore,
                 possimus molestias.</p>
             <div class="skillset">
                 <div class="skillset__left">
@@ -186,62 +187,70 @@
         <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
-            <button class="category__btn active">All<span class="category__count">8</span></button>
-            <button class="category__btn">Font-end<span class="category__count">3</span></button>
-            <button class="category__btn">Back-end<span class="category__count">2</span></button>
-            <button class="category__btn">Mobile<span class="category__count">2</span></button>
+            <button class="category__btn active" data-filter="*">
+                All<span class="category__count">8</span>
+            </button>
+            <button class="category__btn" data-filter="front-end">
+                Font-end<span class="category__count">3</span>
+            </button>
+            <button class="category__btn" data-filter="back-end">
+                Back-end<span class="category__count">2</span>
+            </button>
+            <button class="category__btn" data-filter="etc">
+                Etc<span class="category__count">3</span>
+            </button>
         </div>
         <div class="work__projects">
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="front-end">
                 <img class="project__img" src="imgs/projects/project1.png" alt="프로젝트1">
                 <div class="project__description">
                     <h3>프로젝트 1</h3>
                     <span>HTML CSS JS</span>
                 </div>
             </a>
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="front-end">
                 <img class="project__img" src="imgs/projects/project2.png" alt="프로젝트1">
                 <div class="project__description">
                     <h3>프로젝트 2</h3>
                     <span>HTML CSS JS</span>
                 </div>
             </a>
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="front-end">
                 <img class="project__img" src="imgs/projects/project3.png" alt="프로젝트1">
                 <div class="project__description">
                     <h3>프로젝트 3</h3>
                     <span>HTML CSS JS</span>
                 </div>
             </a>
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="back-end">
                 <img class="project__img" src="imgs/projects/project4.png" alt="프로젝트1">
                 <div class="project__description">
                     <h3>프로젝트 4</h3>
                     <span>HTML CSS JS</span>
                 </div>
             </a>
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="back-end">
                 <img class="project__img" src="imgs/projects/project5.png" alt="프로젝트1">
                 <div class="project__description">
                     <h3>프로젝트 5</h3>
                     <span>HTML CSS JS</span>
                 </div>
             </a>
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="etc">
                 <img class="project__img" src="imgs/projects/project6.png" alt="프로젝트1">
                 <div class="project__description">
                     <h3>프로젝트 6</h3>
                     <span>HTML CSS JS</span>
                 </div>
             </a>
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="etc">
                 <img class="project__img" src="imgs/projects/project7.png" alt="프로젝트1">
                 <div class="project__description">
                     <h3>프로젝트 7</h3>
                     <span>HTML CSS JS</span>
                 </div>
             </a>
-            <a href="#" class="project" target="_blank">
+            <a href="#" class="project" target="_blank" data-type="etc">
                 <img class="project__img" src="imgs/projects/project8.png" alt="프로젝트1">
                 <div class="project__description">
                     <h3>프로젝트 8</h3>
@@ -260,7 +269,8 @@
                     <img class="testimonial__avatar" src="imgs/testimonial/people1-200515-154332.jpg" alt="">
                     <div class="testimonial__speech-bubble">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat odio consequatur molestiae
-                            veniam architecto quidem libero, cum temporibus, recusandae facilis voluptatum repellat nihil
+                            veniam architecto quidem libero, cum temporibus, recusandae facilis voluptatum repellat
+                            nihil
                             itaque qui nisi doloremque aliquid eius sunt!</p>
                         <p class="name"><a href="#">Catty</a> Home</p>
                     </div>
@@ -268,7 +278,8 @@
                 <div class="testimonial">
                     <div class="testimonial__speech-bubble">
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat odio consequatur molestiae
-                            veniam architecto quidem libero, cum temporibus, recusandae facilis voluptatum repellat nihil
+                            veniam architecto quidem libero, cum temporibus, recusandae facilis voluptatum repellat
+                            nihil
                             itaque qui nisi doloremque aliquid eius sunt!</p>
                         <p class="name"><a href="#">Catty</a> Home</p>
                     </div>
@@ -293,6 +304,11 @@
             2020 Cattys - All rights reserved
         </p>
     </section>
+
+    <!-- Arrow up -->
+    <div class="arrow-up">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 </body>
 
 </html>
