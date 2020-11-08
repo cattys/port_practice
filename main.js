@@ -16,3 +16,25 @@ document.addEventListener('scroll', () => {
         navbar.classList.remove('navbar--dark');
     }
 })
+
+// navbar.addEventListener('click', ()=>{
+//     window.scrollTo(0, navbarHeight);
+// })
+
+// Handle scrolling when tapping on the navbar menu
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', (event) => {
+    // console.log(event.target);
+    // <>태그 element 출력
+    // console.log(event.target.dataset);
+    console.log(event.target.dataset.link);
+
+    const target = event.target;
+    // ㄴ 태그 그자체
+    const link = target.dataset.link;
+    if(link==null){
+        return;
+    }
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+})
