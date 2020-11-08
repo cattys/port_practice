@@ -21,6 +21,7 @@ document.addEventListener('scroll', () => {
 //     window.scrollTo(0, navbarHeight);
 // })
 
+
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
@@ -37,8 +38,17 @@ navbarMenu.addEventListener('click', (event) => {
     }
     // const scrollTo = document.querySelector(link);
     // scrollTo.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
 })
+
+// Navbar toggle button for small screen {}
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', ()=>{
+    navbarMenu.classList.toggle('open');
+})
+
 
 
 // Handle click on "contact me" button on home
