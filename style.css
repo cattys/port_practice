@@ -31,6 +31,9 @@
 
     /* Size */
     --size-border-radius: 4px;
+
+    /* Animation */
+    --animation-duration: 350ms;
 }
 
 /* Universal Tags */
@@ -167,5 +170,74 @@ p {
     border-radius: var(--size-border-radius);
 }
 
+/* Section common */
+.section {
+    text-align: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* About */
+.about__majors {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+
+.about__scores img {
+    width: 80px;
+}
+
+.major__icon {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    font-size: 70px;
+    line-height: 170px;
+    border: 1px solid var(--color-blue);
+    margin-bottom: 16px;
+    color: var(--color-blue);
+}
+
+.major__title, .major__description {
+    color: var(--color-dark-grey);
+}
+
+.major__description {
+    font-size: var(--font-small);
+}
 
 
+.major__icon i{
+    transition: all var(--animation-duration) ease;
+    /* 250ms ~ 350ms가 적당한 수치 */
+}
+
+.major__icon:hover  i {
+    transform: scale(1.1) rotate(-30deg);
+    color: pink;
+}
+
+.job {
+    display: flex;
+    align-items: center;
+}
+
+.job__description {
+    margin: 0 16px;
+    text-align: left;
+}
+
+.job__name, .job__period {
+    color: var(--color-light-grey);
+}
+
+
+.job__name {
+    font-size: var(--font-small);
+}
+
+.job__description {
+    font-size: var(--font-micro);
+}
