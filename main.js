@@ -8,8 +8,8 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
 // ()괄호가 비어있으면 아무 인자도 안받고 실행하는것
-    console.log(window.scrollY);
-    console.log(`navbarHeight ${navbarHeight}`);
+    // console.log(window.scrollY);
+    // console.log(`navbarHeight ${navbarHeight}`);
     if(window.scrollY > navbarHeight){
         navbar.classList.add('navbar--dark');
     } else {
@@ -27,7 +27,7 @@ navbarMenu.addEventListener('click', (event) => {
     // console.log(event.target);
     // <>태그 element 출력
     // console.log(event.target.dataset);
-    console.log(event.target.dataset.link);
+    // console.log(event.target.dataset.link);
 
     const target = event.target;
     // ㄴ 태그 그자체
@@ -46,6 +46,14 @@ const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', ()=>{
    scrollIntoView('#contact')
 })
+
+
+// Make home slowly fade to transparent as the window scroll down
+const home =document.querySelector('.home__container');
+const homeHeight =home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    home.style.opacity=(1- window.scrollY/homeHeight)
+});
 
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
