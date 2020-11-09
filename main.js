@@ -8,8 +8,6 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
 // ()괄호가 비어있으면 아무 인자도 안받고 실행하는것
-    // console.log(window.scrollY);
-    // console.log(`navbarHeight ${navbarHeight}`);
     if(window.scrollY > navbarHeight){
         navbar.classList.add('navbar--dark');
     } else {
@@ -17,44 +15,35 @@ document.addEventListener('scroll', () => {
     }
 })
 
-// navbar.addEventListener('click', ()=>{
-//     window.scrollTo(0, navbarHeight);
-// })
 
 
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
-navbarMenu.addEventListener('click', (event) => {
-    // console.log(event.target);
-    // <>태그 element 출력
-    // console.log(event.target.dataset);
-    // console.log(event.target.dataset.link);
+console.log(navbarMenu); // >> ul 태그 자체
 
+navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
-    // ㄴ 태그 그자체
+    // ㄴ li 태그 그자체
     const link = target.dataset.link;
+    //<li data-link="#아이디명">으로 만들어져있음
     if(link==null){
         return;
     }
-    // const scrollTo = document.querySelector(link);
-    // scrollTo.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-
     navbarMenu.classList.remove('open');
     scrollIntoView(link);
 })
-
-// Navbar toggle button for small screen {}
-const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
-navbarToggleBtn.addEventListener('click', ()=>{
-    navbarMenu.classList.toggle('open');
-})
-
-
 
 // Handle click on "contact me" button on home
 const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', ()=>{
    scrollIntoView('#contact')
+})
+
+// 모바일 화면일때 navbar 햄버거 버튼 토글
+// Navbar toggle button for small screen {}
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', ()=>{
+    navbarMenu.classList.toggle('open');
 })
 
 
@@ -64,16 +53,6 @@ const homeHeight =home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
     home.style.opacity=(1- window.scrollY/homeHeight)
 });
-
-// 내가 만든거
-// const arrowBtn = document.querySelector('.arrow-up');
-// window.addEventListener('scroll', ()=>{
-//     if(window.scrollY > homeHeight){
-//         arrowBtn.style.display = 'flex'
-//     } else {
-//         arrowBtn.style.display = 'none'
-//     }
-// })
 
 // Show "arrow up" button when scrolling down
 const arrowUp = document.querySelector('.arrow-up');
@@ -114,9 +93,9 @@ workBtnContainer.addEventListener('click', (e)=>{
 
     // 같은거 1
 
+    // 처음에 투명한 효과 주려고 setTimeOut 실행
     setTimeout(() => {
         projects.forEach( (project)=>{
-            // console.log(project);
             console.log(project.dataset.type);
             if(filter ==='*' || filter === project.dataset.type){
                 project.classList.remove('invisible');
@@ -130,28 +109,15 @@ workBtnContainer.addEventListener('click', (e)=>{
     
     // 같은거 2
     for(let project of projects){
-        // console.log(project);
     }
     // 같은거 3
     let project;
     for(let i=0; i<projects.length; i++){
         project =projects[i];
-        // console.log(project);
     }
 })
-
-
 
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
 }
-
-// var dbd = document.querySelectorAll('.category__btn');
-// for(var i in dbd){
-//     console.log(dbd[i])
-//     var b = dbd[i];
-//     b.addEventListener('click', ()=>{
-//         console.log(b.dataset.filter);
-//     })
-// }
